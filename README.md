@@ -38,4 +38,45 @@ $ yo kraken
 
 ```
 The generator will set up the app and install the dependencies. After it's done, just go into the newly created directory
-`cd Kraken_Example_Session_Redis`
+```bash
+$ cd Kraken_Example_Session_Redis
+```
+
+## Installing the modules needed
+To use Redis, it is necessary to install connect-redis.
+```bash
+$ npm install --save connect-redis
+```
+After issuing this command, the package.json file has one more dependency - `"connect-redis": "~1.4.6"`
+
+## Configuring the middleware.json file
+To instruct *express* to use Redis as the session store, the configuration must be changed to:
+
+```
+"session": {
+          "module": "connect-redis",
+          "secret": "80bc6d67f80813ccc78ff77adf0eefcafa7eeef6"
+      }
+```
+## And you're done!
+After this, just issue: `$ npm start` and your application is using Redis!
+
+## Notes
+Redis client: on a terminal, issue: `$ redis-cli` and you'll have a command line for accessing Redis. Try
+```bash
+$ redis-cli
+redis 127.0.0.1:6379> keys *
+1) "sess:Ot9K7wROHZHnr8oUnwkUteds"
+2) "sess:faUzznKZ3JPNE07jL3U7cfm2"
+3) "sess:XlIwce1sNO9ezHzXnhdaq7B8"
+4) "sess:KNYgBRYKfjwbPkzSRSgpWKpt"
+5) "sess:GZ92gMro02ynrGIkTgJiuXlC"
+redis 127.0.0.1:6379> 
+```
+and you'll have a list of the keys stored.
+
+
+
+
+
+
