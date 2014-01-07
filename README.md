@@ -50,8 +50,9 @@ $ npm install --save connect-redis
 After issuing this command, the package.json file has one more dependency - `"connect-redis": "~1.4.6"`
 
 ## Configuring the middleware.json file
-To instruct *express* to use Redis as the session store, the configuration must be changed to:
+To instruct *kraken* to use Redis as the session store, the configuration must be changed to:
 
+In `middleware.json`
 ```
 "session": {
           "module": "connect-redis",
