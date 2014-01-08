@@ -19,6 +19,9 @@
 //
       "session": {
           "module": "connect-redis",
+          "config": {
+            "ttl": 3600
+          },
           "secret": "300b6574099026c0e2c46130fb62531d2e7ff6e1"
       }
 //
