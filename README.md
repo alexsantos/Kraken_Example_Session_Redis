@@ -54,9 +54,19 @@ To instruct *kraken* to use Redis as the session store, the configuration must b
 
 In `middleware.json`
 ```
-"session": {
+      "session": {
           "module": "connect-redis",
           "secret": "80bc6d67f80813ccc78ff77adf0eefcafa7eeef6"
+      }
+```
+To pass options to connect-redis, just add a config object:
+```
+      "session": {
+          "module": "connect-redis",
+          "config": {
+            "ttl": 3600
+          },
+          "secret": "300b6574099026c0e2c46130fb62531d2e7ff6e1"
       }
 ```
 ## And you're done!
