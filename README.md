@@ -45,7 +45,7 @@ $ cd Kraken_Example_Session_Redis
 ## Installing the modules needed
 To use Redis, it is necessary to install connect-redis.
 ```bash
-$ npm install --save connect-redis
+$ npm install --save connect-redis@~1.4.6
 ```
 After issuing this command, the package.json file has one more dependency - `"connect-redis": "~1.4.6"`
 
